@@ -88,7 +88,7 @@ for i in os.listdir("C:/Users/mathe/Desktop/Aprovada"):
     cont = cont + 1
 
 print('> Log Aprovado.txt Gerado...')
- 
+
 print('> Conteudo Encontrado...')
  
 print('> Iniciando Cruzamento De Dados...\n')
@@ -105,7 +105,7 @@ if (len(dicionario_pdf.keys()) == len(dicionario_aprovado.keys())):
 if (n_pdf > n_aprovada):
   print('> Numero De Pares Incompativel...')
   while(len(dicionario_pdf.keys()) != len(dicionario_aprovado.keys())):
-    dicionario_aprovado[n_aprovada] = 99999999999999999999999999999999999999999999
+    dicionario_aprovado[n_aprovada] = "99999999999999999999999999999999999999999999"
     n_aprovada = len(dicionario_aprovado.keys())
   print('> Adicionando Valores Extras Em NF-e APROVADA Para Funcionar O Cruzamento De Dados...')
   print('> Numeros De NF-e PDF:',n_pdf)
@@ -114,7 +114,7 @@ if (n_pdf > n_aprovada):
 if (n_pdf < n_aprovada):
   print('> Numero De Pares Incompativel...')
   while(len(dicionario_aprovado.keys()) != len(dicionario_pdf.keys())):
-    dicionario_pdf[n_pdf] = 88888888888888888888888888888888888888888888
+    dicionario_pdf[n_pdf] = "88888888888888888888888888888888888888888888"
     n_pdf = len(dicionario_pdf.keys())
   print('> Adicionando Valores Extras Em NF-e PDF Para Funcionar O Cruzamento De Dados...')
   print('> Numeros De NF-e PDF:',n_pdf)
@@ -147,7 +147,7 @@ for leitura_no_pdf in range(0,len(dicionario_pdf.keys())):
       erros = False
       break
   if (erros  == True):
-    if (dicionario_pdf[leitura_no_pdf] == 88888888888888888888888888888888888888888888):
+    if (dicionario_pdf[leitura_no_pdf] == "88888888888888888888888888888888888888888888"):
         1#esse 1  e so para a maquina nao buga
     else:
       print("> NF-e Do PDF Nao Encontrou O Arquivo XML Corespondente: ",dicionario_pdf[leitura_no_pdf]+"-nfe.XML")
@@ -169,7 +169,7 @@ for leitura_no_aprovado in range(0,len(dicionario_aprovado.keys())):
       erros = False
       break
     if (erros == True):
-      if (dicionario_aprovado[leitura_no_aprovado] == 99999999999999999999999999999999999999999999):
+      if (dicionario_aprovado[leitura_no_aprovado] == "99999999999999999999999999999999999999999999"):
         1#esse 1  e so para a maquina nao buga
       else:  
         print("> NF-e Invalida Na Pasta Aprovadas: ",dicionario_aprovado[leitura_no_aprovado])

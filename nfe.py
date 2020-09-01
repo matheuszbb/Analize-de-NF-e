@@ -1,6 +1,14 @@
 import os #controle do sistema
-os.system("pip install pypdf4")
-import PyPDF4 #leitura de pdf
+
+for i in os.listdir("C:/Users/mathe/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0/LocalCache/local-packages/Python38/site-packages"):
+  if (i == "PyPDF4"):
+    PyPDF4_ja_instalado = True
+
+if (PyPDF4_ja_instalado == True):
+  import PyPDF4 #leitura de pdf
+else:
+  os.system("pip install pypdf4")
+  import PyPDF4 #leitura de pdf
 
  
 print('> Iniciano...')
@@ -30,7 +38,7 @@ conteudo = arquivo.readlines()
  
 dicionario = {}
  
-print('> Procurando Codigos NFE...')
+print('> Procurando Codigos NF-e...')
  
 for m in range(0,len(conteudo)):
   k = 'linha ' + str(m) +':'
@@ -88,8 +96,8 @@ print('> Iniciando Cruzamento De Dados...\n')
 n_pdf = len(dicionario_pdf.keys())
 n_aprovada = len(dicionario_aprovado.keys())
  
-print('> Numeros De NFE-PDF:',n_pdf)
-print('> Numeros De NFE-APROVADA:',n_aprovada)
+print('> Numeros De NF-e PDF:',n_pdf)
+print('> Numeros De NF-e APROVADA:',n_aprovada)
  
 if (len(dicionario_pdf.keys()) == len(dicionario_aprovado.keys())):
   print('> Numero De Pares Compativel...')
@@ -99,18 +107,18 @@ if (n_pdf > n_aprovada):
   while(len(dicionario_pdf.keys()) != len(dicionario_aprovado.keys())):
     dicionario_aprovado[n_aprovada] = 99999999999999999999999999999999999999999999
     n_aprovada = len(dicionario_aprovado.keys())
-  print('> Adicionando Valores Extras Em NFE-APROVADA Para Funcionar O Cruzamento De Dados...')
-  print('> Numeros De NFE-PDF:',n_pdf)
-  print('> Numeros De NFE-APROVADA:',n_aprovada)
+  print('> Adicionando Valores Extras Em NF-e APROVADA Para Funcionar O Cruzamento De Dados...')
+  print('> Numeros De NF-e PDF:',n_pdf)
+  print('> Numeros De NF-e APROVADA:',n_aprovada)
     
 if (n_pdf < n_aprovada):
   print('> Numero De Pares Incompativel...')
   while(len(dicionario_aprovado.keys()) != len(dicionario_pdf.keys())):
     dicionario_pdf[n_pdf] = 88888888888888888888888888888888888888888888
     n_pdf = len(dicionario_pdf.keys())
-  print('> Adicionando Valores Extras Em NFE-PDF Para Funcionar O Cruzamento De Dados...')
-  print('> Numeros De NFE-PDF:',n_pdf)
-  print('> Numeros De NFE-APROVADA:',n_aprovada)
+  print('> Adicionando Valores Extras Em NF-e PDF Para Funcionar O Cruzamento De Dados...')
+  print('> Numeros De NF-e PDF:',n_pdf)
+  print('> Numeros De NF-e APROVADA:',n_aprovada)
  
 print("\n> Verificando Duplicidade No PDF...")
  
@@ -121,11 +129,11 @@ for verifica_pdf in range(0,len(dicionario_pdf.keys())):
     if ((dicionario_pdf[verifica_pdf]) == (dicionario_duplicado_pdf_verificador[verifica_pdf_log])):
       erros = erros + 1
   if (erros >= 2):
-    print("> NFE Encontrada No PDF Esta Duplicada: ",dicionario_pdf[verifica_pdf])
+    print("> NF-e Encontrada No PDF Esta Duplicada: ",dicionario_pdf[verifica_pdf])
     duplicado = True
  
 if (duplicado == False):
-  print("> Nao Foi Encontrada Nenhuma NFE Duplicada No PDF...")
+  print("> Nao Foi Encontrada Nenhuma NF-e Duplicada No PDF...")
  
 print("> Cruzando Valores do PDF X Aprovada.xml...")
 
@@ -142,11 +150,11 @@ for leitura_no_pdf in range(0,len(dicionario_pdf.keys())):
     if (dicionario_pdf[leitura_no_pdf] == 88888888888888888888888888888888888888888888):
         1#esse 1  e so para a maquina nao buga
     else:
-      print("> NFE Nao Encontrada No PDF: ",dicionario_pdf[leitura_no_pdf])
+      print("> NF-e Do PDF Nao Encontrou O Arquivo XML Corespondente: ",dicionario_pdf[leitura_no_pdf]+"-nfe.XML")
       duplicado = True
  
 if (duplicado == False):
-  print("> Todas as NFE No PDF Foram Encontradas Na Pasta Aprovada.xml")
+  print("> Todas as NF-e No PDF Foram Encontradas Na Pasta Aprovada.xml!!!")
  
 print("> Cruzando Valores do Aprovada.xml X PDF...")
 
@@ -155,18 +163,19 @@ for leitura_no_aprovado in range(0,len(dicionario_aprovado.keys())):
   erros = False
   for leitura_no_pdf in range(0,len(dicionario_pdf.keys())):
     if ((dicionario_aprovado[leitura_no_aprovado]) != (dicionario_pdf[leitura_no_pdf])):
-      erros = True
+      if ((leitura_no_pdf) == (len(dicionario_aprovado.keys())-1)):# se mesmo de pois de vasculhar todo o pdf nao encontra um par
+        erros = True                                               # correspondente ai sim pode declarar erro
     if ((dicionario_aprovado[leitura_no_aprovado]) == (dicionario_pdf[leitura_no_pdf])):
       erros = False
       break
     if (erros == True):
       if (dicionario_aprovado[leitura_no_aprovado] == 99999999999999999999999999999999999999999999):
         1#esse 1  e so para a maquina nao buga
-    else:  
-      print("> NFE Invalida Na Pasta Aprovadas: ",dicionario_aprovado[leitura_no_aprovado])
-      duplicado = True
+      else:  
+        print("> NF-e Invalida Na Pasta Aprovadas: ",dicionario_aprovado[leitura_no_aprovado])
+        duplicado = True
 
 if (duplicado == False):
-  print("> Todas as NFE Na Pasta Aprovada.xml Foram Encontradas No PDF!!!")
+  print("> Todas as NF-e Na Pasta Aprovada.xml Foram Encontradas No PDF!!!")
 
 print("> Fim!!")

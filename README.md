@@ -11,7 +11,7 @@ basta clicar em proximo, lembrando apenas de clikar em criar atalho na area de t
 bem como meu programa nao tem nenhuma certificasao do windows entao ele pode pensar que meu programa e malicioso entao por favor clik em manter, nada alem disso,
 porem ja entrei em contato para eles para verificarem isso e perceberem que nao e um virus.
 # Casso Click e nao abre:
-recorte o programa e cole diretamete na unidade C:/ ou em uma segundo unidade, exemplo D:/, nao sei o motivo desse erro.
+recorte o programa e cole diretamete na unidade C:/ ou em uma segunda unidade, exemplo D:/, nao sei o motivo desse erro.
 # Casso Click e avise O Windows protegeu o computador:
 O Microsoft defender SmartScreen impediu que um aplicativo não reconhecido fosse iniciado. A execução deste aplicativo pode colocar o computador em risco.
 

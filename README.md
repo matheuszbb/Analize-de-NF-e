@@ -22,6 +22,6 @@ vai aparecer isso:
 Aplicativo: nfe_analyzer.exe 
 Fornecedor:  Fornecedor desconhecido 
 
-execultar assim mesmo  <<<<por favor clik em 
+execultar assim mesmo  <<<<por favor clik aqui
 
 bem como ja mencionei meu programa nao tem nenhuma certificasao do windows entao ele pode pensar que meu programa e malicioso

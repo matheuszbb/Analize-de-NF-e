@@ -5,7 +5,7 @@ Baixe esse arquivo caso queira instalar em seu pc,
 nfe_analyzer_instalador.exe
 # Depois de baixar:
 va na pasta download ou em outra pasta que voce tenha colocado esse programa e clik ate o arquivo abrir 
-# Instalaca:
+# Instalacao:
 basta clicar em proximo, lembrando apenas de clikar em criar atalho na area de trabalho.
 # Casso de o windons falar que e virus:
 bem como meu programa nao tem nenhuma certificasao do windows entao ele pode pensar que meu programa e malicioso entao por favor clik em manter, nada alem disso,

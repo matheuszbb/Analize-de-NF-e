@@ -2,7 +2,11 @@
 
 Esse progama tem como intuito ajudar o setor fiscal
 
-1:  Inicialmente tive bastante dificuldade para encontrar conteudo que abordava a leitura de pdf. Resposta = pip install pypdf4 / import PyPDF4 #leitura de pdf
+1:  Inicialmente tive bastante dificuldade para encontrar conteudo que abordava a leitura de pdf. Resposta = { 
+    import os #controle do sistema
+    os.system("pip install pypdf4") ## caso nao tenha instalado
+    import PyPDF4 #leitura de pdf
+    }
 2:  Depois a dificuldade foi como fazer o scraping do pdf afinal como eu iria achar qual linha que estariao os codigos das NF-e?
 3:  Bem a resposta foi encontrada quando convertir tudo que o robo leu do pdf para txt assim percebi que antes do codigo sempre tem " Id NFC-e: "
     entao pensei ja que peguei uma montueira dados e cada dado foi escrito em uma linha diferente, vou encontrar a penas as linhas que tem " Id NFC-e: "

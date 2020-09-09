@@ -53,7 +53,6 @@ try:
     add = 0
     for j in dicionario.values():
       if (j == "Id NFC-e:\n"):
-        k = 'linha ' + str(cont+1) +':'
         dicionario_pdf[add] = dicionario[cont+1].replace("\n","")
         dicionario_duplicado_pdf_verificador[add] = dicionario[cont+1].replace("\n","")
         dicionario_pdf_log[add] = dicionario[cont+1]

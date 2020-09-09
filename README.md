@@ -19,7 +19,7 @@ Mais informações <<< clik aqui
 
 vai aparecer isso:
 
-Aplicativo: nfe_analyzer.exe 
+Aplicativo: nfe_analyzer_instalador.exe 
 Fornecedor:  Fornecedor desconhecido 
 
 execultar assim mesmo  <<<<por favor clik aqui
